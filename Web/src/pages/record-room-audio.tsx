@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Navigate, useParams } from "react-router-dom";
 
 const isRecordingSupported = !!navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia == 'function'
@@ -97,13 +99,36 @@ export function RecordRoomAudio() {
     }
 
     return (
-        <div className="flex h-screen flex-col items-center justify-center gap-3 ">
-            {isRecording ? (
-                <Button onClick={stopRecording} className="mb-2 text-gray-100">Pausar Gravaçao</Button>
-            ) : (
-                <Button onClick={startRecording} className="mb-2 text-gray-100">Gravar audio</Button>
-            )}
-            {isRecording ? <p className="mb-2 font-bold text-gray-100">Gravando...</p> : <p className="mb-2 font-bold text-gray-100">Pausado</p>}
+    <div className="bg-gray-900 min-h-screen flex flex-col">
+      <div className="container mx-auto max-w-4xl px-4 py-8">
+        <div className="mb-4 flex items-center justify-between">
+          <Link to={`/room/${params.roomId}`}>
+            <Button className="flex items-center gap-2" variant="secondary">
+              <ArrowLeft className="mr-2 size-4" />
+              Voltar à sala
+            </Button>
+          </Link>
         </div>
-    )
+      </div>
+
+      {/* Conteúdo centralizado vertical e horizontalmente */}
+      <div className="flex-grow flex flex-col items-center justify-center gap-3">
+        <h1 className="mb-6 text-center text-3xl font-semibold tracking-tight text-gray-100">
+            Aperte o botão abaixo para gravar a aula!
+        </h1>
+        {isRecording ? (
+          <Button onClick={stopRecording} className="flex items-center gap-2" variant="secondary">
+            Pausar Gravaçao
+          </Button>
+        ) : (
+          <Button onClick={startRecording} className="flex items-center gap-2" variant="secondary">
+            Gravar audio
+          </Button>
+        )}
+        <p className="mb-2 font-bold text-gray-100">
+          {isRecording ? "Gravando..." : "Pausado"}
+        </p>
+      </div>
+    </div>
+  )
 }

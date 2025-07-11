@@ -15,7 +15,7 @@ interface QuestionItemProps {
 }
 
 export function QuestionItem({ question }: QuestionItemProps) {
-  const isGenerating = !question.answer
+  //const isGeneratingAnswer = !question.answer
 
   return (
     <Card>
