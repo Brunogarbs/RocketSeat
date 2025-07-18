@@ -1,21 +1,40 @@
 # Rocketseat Event Project - Audio Transcription & AI Integration
 
-Este projeto foi desenvolvido como parte de um evento promovido pela **Rocketseat**, focando em integração de Inteligência Artificial para transcrição de áudio e respostas automáticas a perguntas relacionadas ao tema da gravação.
+Projeto desenvolvido durante um evento da Rocketseat, com foco em tecnologias modernas de desenvolvimento full-stack e integração de Inteligência Artificial. A aplicação permite a gravação e transcrição de áudios diretamente pelo navegador, além de gerar respostas inteligentes com base no conteúdo transcrito.
 
 ## ✨ Funcionalidades
 
-- Transcrição automática de áudios.
-- Geração de respostas inteligentes para perguntas sobre o conteúdo transcrito.
-- Interface intuitiva para upload e análise de áudios.
+- 🎙️ Gravação de áudio via navegador;
+- 🔊 Transcrição automática do áudio;
+- 🧠 Geração de embeddings e respostas inteligentes usando a API do Gemini;
+- 🔍 Consulta de dados transcritos via interface interativa;
+- 🌐 Upload de arquivos e consumo de APIs com React Query;
+- ⚙️ Integração entre front-end e back-end com estrutura desacoplada e performática;
 
 ## 🚀 Tecnologias Utilizadas
 
-- **Node.js**: Backend da aplicação.
-- **React**: Interface web.
-- **OpenAI API**: Processamento de linguagem natural e geração de respostas.
-- **Speech-to-Text API**: Transcrição de áudio.
-- **TypeScript**: Tipagem estática para maior segurança.
-- **Express**: Estrutura do servidor backend.
+### Back-End:
+
+- Node.js
+- Fastify
+- TypeScript
+- PostgreSQL
+- Drizzle ORM
+- Docker
+
+### Front-End:
+
+- React
+- Vite
+- Tailwind CSS
+- React Router DOM
+- React Query
+- Hooks personalizados para controle de gravação, requisições e estados.
+
+### Inteligência Artificial:
+
+- Gemini API (Google AI)
+- Speech-to-Text
 
 ## 📁 Estrutura de Pastas
 
@@ -45,4 +64,5 @@ Este projeto foi desenvolvido como parte de um evento promovido pela **Rocketsea
 
 ---
 
-Projeto criado para fins educacionais e experimentação com IA e transcrição de áudio.
+Este projeto foi criado com fins educacionais e de experimentação com IA.
+Sinta-se livre para contribuir, testar melhorias ou aplicar este modelo em outros contextos.
